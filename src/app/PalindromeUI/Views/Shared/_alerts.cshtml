@@ -1,0 +1,14 @@
+@if (TempData.ContainsKey(MyAlerts.SUCCESS))
+{
+    <div class="alert alert-block">
+        <a class="close" data-dismiss="alert" href="#">x</a>
+        <h4 class="alert-heading" new { style = "color:#006400"}>@TempData[MyAlerts.SUCCESS]</h4>        
+    </div>
+}
+@if (TempData.ContainsKey(MyAlerts.FAIL))
+{
+    <div class="alert alert-block">
+        <a class="close" data-dismiss="alert" href="#">x</a>
+        <h4 class="alert-heading" new { style = "color:#ff0000"}>@TempData[MyAlerts.FAIL]</h4>
+    </div>
+}

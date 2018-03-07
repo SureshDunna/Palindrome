@@ -1,0 +1,20 @@
+﻿@model IEnumerable<PalindromeUI.Models.Palindrome>
+
+@{
+    ViewData["Title"] = "Palindromes";
+}
+
+<h2>Palindromes</h2>
+@{Html.RenderPartial("_alerts");}
+<table cellpadding="0" cellspacing="0" border="0" >
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Value)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

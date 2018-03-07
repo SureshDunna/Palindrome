@@ -1,0 +1,36 @@
+@model PalindromeUI.Models.Palindrome
+
+@{
+    ViewData["Title"] = "Palindrome Check";
+}
+
+<h2>Check</h2>
+
+<h4>Palindrome</h4>
+<hr />
+@{Html.RenderPartial("_alerts");}
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Check">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Value" class="control-label">Enter value to check palindrome:</label>
+                <input asp-for="Value" class="form-control" />
+                <span asp-validation-for="Value" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Check" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
